@@ -1,0 +1,125 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Fresh theme tokens */
+:root{
+  --bg-0: #071021;
+  --card: rgba(255,255,255,0.03);
+  --muted: rgba(255,255,255,0.84);
+  --accent-from: #00d2ff;
+  --accent-to: #7b61ff;
+}
+
+/* global */
+html,body,#root{height:100%}
+body{
+  margin:0;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: radial-gradient(800px 300px at 10% 10%, rgba(123,97,255,0.03), transparent), linear-gradient(180deg,var(--bg-0), #061121);
+  color: var(--muted);
+}
+
+/* center card */
+.app-card{
+  width:100%;
+  max-width:480px;
+  margin: 24px auto;
+  border-radius: 16px;
+  overflow: hidden;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border: 1px solid rgba(255,255,255,0.02);
+  box-shadow: 0 16px 60px rgba(2,6,23,0.6);
+}
+
+/* header */
+.header{
+  padding:16px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+.title{
+  font-weight:800; font-size:18px; color:#fff;
+}
+.subtitle{ font-size:12px; opacity:0.75; margin-top:2px; }
+
+/* stage */
+.stage {
+  position:relative;
+  height:560px;
+  background: linear-gradient(180deg, rgba(6,9,16,0.6), rgba(9,12,20,0.2));
+  border-top:1px solid rgba(255,255,255,0.02);
+  touch-action: manipulation;
+}
+
+/* bird */
+.bird {
+  position:absolute;
+  width:48px; height:36px;
+  border-radius:8px;
+  background: linear-gradient(90deg,var(--accent-from),var(--accent-to));
+  box-shadow: 0 12px 30px rgba(0,0,0,0.4), 0 6px 18px rgba(123,97,255,0.08);
+  transform-origin: center;
+}
+
+/* pipe */
+.pipe {
+  position:absolute;
+  width:76px;
+  background: linear-gradient(180deg,#1f8a4c,#0b5b2f);
+  border-radius:10px;
+  box-shadow: 0 10px 30px rgba(2,6,23,0.5);
+}
+
+/* hud */
+.hud {
+  padding:12px 16px;
+  display:flex; align-items:center; justify-content:space-between;
+}
+.score {
+  font-weight:900; font-size:22px; color:#fff;
+}
+
+/* overlay modal */
+.overlay {
+  position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
+  background: linear-gradient(180deg, rgba(2,6,23,0.35), rgba(2,6,23,0.6));
+  backdrop-filter: blur(4px);
+}
+.modal {
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  padding:20px; border-radius:12px; width:86%; max-width:360px; text-align:center;
+  border:1px solid rgba(255,255,255,0.03);
+}
+.play-btn {
+  background: linear-gradient(90deg,var(--accent-from),var(--accent-to));
+  color:white; padding:10px 18px; border-radius:10px; font-weight:800; border:none;
+  box-shadow: 0 12px 36px rgba(123,97,255,0.16);
+}
+.small-btn { padding:8px 12px; border-radius:8px; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.02); }
+
+/* ensure play stage doesn't scroll on mobile */
+.stage { touch-action: none; -ms-touch-action: none; }
+
+/* Loader styles */
+.loader-screen {
+  background: radial-gradient(800px 300px at 50% 10%, rgba(123,97,255,0.03), transparent), linear-gradient(180deg,#071021, #061121);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+.progress-track {
+  height: 8px;
+  background: rgba(255,255,255,0.04);
+  border-radius: 999px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.03);
+}
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #00d2ff, #7b61ff);
+  width: 0%;
+  transition: width 240ms linear;
+  box-shadow: 0 8px 28px rgba(123,97,255,0.12);
+}

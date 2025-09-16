@@ -1,0 +1,37 @@
+{
+  "name": "dodge-dash",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Dodge Dash - simple arcade dodge game (React + Vite + Tailwind)",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "format": "prettier --write \"src/**/*.{js,jsx,css,md}\""
+  },
+  "keywords": [
+    "game",
+    "react",
+    "vite",
+    "tailwind"
+  ],
+  "author": "njugi",
+  "license": "MIT",
+  "dependencies": {
+    "clsx": "^2.1.1",
+    "framer-motion": "^12.23.12",
+    "howler": "^2.2.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^7.9.1",
+    "zustand": "^5.0.8"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.14",
+    "postcss": "^8.4.26",
+    "tailwindcss": "^3.4.6",
+    "vite": "^5.1.0",
+    "prettier": "^3.0.0"
+  }
+}
+
